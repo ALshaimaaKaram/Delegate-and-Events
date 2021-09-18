@@ -8,7 +8,7 @@ namespace Delegate_and_Events
 {
     class Employee
     {
-        public event Action<float> DecreaseBudget;
+        public  event Action<float> DecreaseBudget;
         public int ID { get; set; }
         public string Name { get; set; }
         public float Salary { get; set; }
@@ -20,7 +20,19 @@ namespace Delegate_and_Events
             {
                 DecreaseBudget(amount);
             }
+            //DecreaseBudget?.Invoke(amount);
         }
+
+        //Logical (programmer) Error
+        //public void IncreaseSalary(float amount, Company company)
+        //{
+        //    Salary += amount;
+        //    DecreaseBudget += company.decreaseBudget;
+        //    if (DecreaseBudget != null)
+        //    {
+        //        DecreaseBudget(amount);
+        //    }
+        //}
 
         public override string ToString()
         {

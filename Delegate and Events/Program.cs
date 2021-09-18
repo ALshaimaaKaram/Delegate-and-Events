@@ -8,7 +8,7 @@ namespace Delegate_and_Events
         static void Main(string[] args)
         {
             Employee e1 = new Employee() { ID = 1, Name = "Alshaimaa", Salary = 6000 };
-            Employee e2 = new Employee() { ID = 2, Name = "Esraa", Salary = 5000 };
+            Employee e2 = new Employee() { ID = 2, Name = "Esraa", Salary = 6000 };
             Employee e3 = new Employee() { ID = 3, Name = "Asmaa", Salary = 2000 };
 
             List<Employee> emlist = new List<Employee>();
@@ -20,17 +20,23 @@ namespace Delegate_and_Events
 
             Console.WriteLine("The employee is " + e1);
             Console.WriteLine("The Company is " + company);
-            e1.DecreaseBudget += company.decreaseBudget;
+            //Employee.DecreaseBudget += company.decreaseBudget;
             Console.WriteLine("*****************************************");
 
+            e1.DecreaseBudget += company.decreaseBudget;
+            e1.IncreaseSalary(2000);
+            e1.IncreaseSalary(2000);
 
-            e1.IncreaseSalary(1000);
             Console.WriteLine("The employee is " + e1);
             Console.WriteLine("The Company is " + company);
             Console.WriteLine("*****************************************");
 
             e2.DecreaseBudget += company.decreaseBudget;
             e2.IncreaseSalary(2000);
+
+            //e2.IncreaseSalary(2000,company);
+            //e2.IncreaseSalary(2000, company);
+            //e2.IncreaseSalary(2000, company);
             Console.WriteLine("The employee is " + e2);
             Console.WriteLine("The Company is " + company);
             Console.WriteLine("*********************Filteration********************");
